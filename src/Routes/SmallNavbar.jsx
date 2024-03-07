@@ -8,10 +8,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Input,
-  Button,
   Link,
-  Stack,
   Flex,
   Heading,
 } from "@chakra-ui/react";
@@ -29,9 +26,8 @@ const SmallNavbar = () => {
         alignItems={"center"}
         bg="blue.100"
         color={"blue.900"}
-        position={"fixed"}
+        position={"sticky"}
         top={0}
-        zIndex={10}
         w={"100%"}
         h={"60px"}
       >

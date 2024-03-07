@@ -1,4 +1,4 @@
-import {  Box, Heading, Link} from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
 import React from "react";
 import FooterLinks from "./FooterLinks";
 import SocialLinks from "./SocialLinks";
@@ -13,8 +13,8 @@ const Footer = () => {
       maxWidth="100%"
       margin="auto"
     >
-      <Heading size={["md", "lg", "xl"]}>
-        <Link href="#">QuoteNest</Link>
+      <Heading size={["md", "lg", "xl"]} mb={10}>
+        <Link _hover={{ textDecoration: "none" }} href="#">QuoteNest</Link>
       </Heading>
       <FooterLinks />
       <SocialLinks />

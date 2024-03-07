@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Anta', sans-serif;
+}
+.slider-container{
+    max-width: 97vw;
+    margin: auto;
+}
+.slider-image{
+    width: 100%;
+    
 }

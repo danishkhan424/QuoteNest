@@ -1,4 +1,10 @@
-import { Box, Heading, Link, Button, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Link,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import React from "react";
 import SmallNavbar from "./SmallNavbar";
 
@@ -31,7 +37,7 @@ const Navbar = () => {
         alignItems={"center"}
         px={["10px", "20px", "40px"]}
         fontWeight={"bold"}
-        w={"50%"}
+        w={"60%"}
         gap={5}
         fontSize={["sm", "md", "lg"]}
         letterSpacing={2}
@@ -40,9 +46,11 @@ const Navbar = () => {
         <Link href="/generate">Generate</Link>
         <Link href="/about">About</Link>
         <Button
+          fontSize={["sm", "md", "lg"]}
           colorScheme="blue.900"
-          variant="outline"
-          size={["sm", "md", "lg"]}
+            variant="outline"
+            px={["10","10","10"]}
+          size={["xs", "md", "lg"]}
           _hover={{ bg: "blue.900", color: "blue.100" }}
         >
           <Link _hover={{ textDecoration: "none" }} href="/login">

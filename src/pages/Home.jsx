@@ -1,10 +1,22 @@
-import { Box } from '@chakra-ui/react'
-import React from 'react'
+import React from "react";
+import Slider from "react-slick";
+import { Box} from "@chakra-ui/react";
+import Section1 from "../components/Home/Section1";
+import Section2 from "../components/Home/Section2";
+import Section3 from "../components/Home/Section3";
 
-const Home = () => {
+
+function Home() {
+  
   return (
-    <Box h={"200vh"}>Home</Box>
-  )
+    <>
+      <Box>
+        <Section1/>
+        <Section2/>
+        <Section3/>
+      </Box>
+    </>
+  );
 }
 
-export default Home
+export default Home;
