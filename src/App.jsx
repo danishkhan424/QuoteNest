@@ -1,23 +1,24 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
 import { Box } from "@chakra-ui/react";
 import "./App.css";
 import Navbar from "./Routes/Navbar";
 import AllRoutes from "./Routes/AllRoutes";
 import Footer from "./components/Footer/Footer";
+import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 function App() {
+
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   }, []);
-
-  if (isLoading)return <Loader />;
   
-
-  return (
+  return isLoading ? <Loader /> : (
     <Box>
       <Navbar />
       <AllRoutes />

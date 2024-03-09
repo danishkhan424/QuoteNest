@@ -1,19 +1,13 @@
-import React, { useReducer, createContext } from "react";
-
-const initialState = {
-  email: "",
-  password: "",
-  isLoggedIn: true,
-};
-
-const reducer = (state, { type, payload }) => {};
+import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  
   return (
-    <AuthContext.Provider value={{ state, dispatch }}>
+    
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn}}>
       {children}
     </AuthContext.Provider>
   );

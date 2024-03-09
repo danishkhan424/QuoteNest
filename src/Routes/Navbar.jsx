@@ -5,12 +5,20 @@ import {
   Button,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SmallNavbar from "./SmallNavbar";
-
+import Loader from "../components/Loader";
 const Navbar = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   const screenSize = useBreakpointValue({ base: "base", md: "md" });
-  return screenSize === "base" ? (
+  return isLoading ? (
+    <Loader />
+  ) : screenSize === "base" ? (
     <SmallNavbar />
   ) : (
     <Box
@@ -19,7 +27,7 @@ const Navbar = () => {
       justifyContent="space-between"
       alignItems={"center"}
       py={3}
-      px={["20px", "30px", "80px"]}
+      px={["20px", "30px", "60px"]}
       bg="blue.100"
       color={"blue.900"}
       position={"sticky"}
@@ -33,11 +41,11 @@ const Navbar = () => {
       </Heading>
       <Box
         display="flex"
-        justifyContent="space-between"
+        justifyContent="space-evenly"
         alignItems={"center"}
         px={["10px", "20px", "40px"]}
         fontWeight={"bold"}
-        w={"60%"}
+        w={"40%"}
         gap={5}
         fontSize={["sm", "md", "lg"]}
         letterSpacing={2}
@@ -48,13 +56,13 @@ const Navbar = () => {
         <Button
           fontSize={["sm", "md", "lg"]}
           colorScheme="blue.900"
-            variant="outline"
-            px={["10","10","10"]}
+          variant="outline"
+          px={["10", "10", "10"]}
           size={["xs", "md", "lg"]}
           _hover={{ bg: "blue.900", color: "blue.100" }}
         >
-          <Link _hover={{ textDecoration: "none" }} href="/login">
-            Login
+          <Link _hover={{ textDecoration: "none" }} href="/signup">
+            Sign up
           </Link>
         </Button>
       </Box>

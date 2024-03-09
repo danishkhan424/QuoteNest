@@ -1,30 +1,67 @@
-import React from 'react'
-import { Flex, Text } from "@chakra-ui/react";
+import React from "react";
+import Slider from "react-slick";
+import { Box, Image } from "@chakra-ui/react";
+import sliderImage1 from "../../assets/Slider/s1.png";
+import sliderImage2 from "../../assets/Slider/s2.png";
+import sliderImage3 from "../../assets/Slider/s3.png";
+import sliderImage4 from "../../assets/Slider/s4.png";
+import sliderImage5 from "../../assets/Slider/s5.png";
+import sliderImage6 from "../../assets/Slider/s6.png";
+import sliderImage7 from "../../assets/Slider/s7.png";
+import sliderImage8 from "../../assets/Slider/s8.png";
+import sliderImage9 from "../../assets/Slider/s9.png";
+import sliderImage10 from "../../assets/Slider/s10.png";
 
-const section1 = () => {
-  return (
-    <Flex
-      h={"100vh"}
-      direction={"column"}
-      alignItems={"center"}
-      textAlign={"center"}
-      justifyContent={"center"}
-    >
-      <Text
-        fontFamily={"Arial, Helvetica, sans-serif"}
-        fontWeight={"900"}
-        fontSize={["20px", "28px", "30px", "34px", "56px"]}
-        px={[10,20,20, 40,]}
-      >
-        Quote Generator to Create Unique Quotes in Seconds
-      </Text>
-      <Text fontSize={["12px", "16px", "18px", "20px"]} px={[20,20,40]}>
-        Looking for the perfect quote? Our AI Quote Generator provides a
-        seamless experience in creating quotes that resonate and inspire.
-        Generate quotes that stand out and make an impact.
-      </Text>
-    </Flex>
-  );
+const sliderImages = [
+  sliderImage1,
+  sliderImage2,
+  sliderImage3,
+  sliderImage4,
+  sliderImage5,
+  sliderImage6,
+  sliderImage7,
+  sliderImage8,
+  sliderImage9,
+  sliderImage10,
+];
+
+function ArrowButton({ style }) {
+  return <Box style={{ ...style, display: "none" }} />;
 }
+const Section1 = () => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+    nextArrow: <ArrowButton />,
+    prevArrow: <ArrowButton />,
+  };
 
-export default section1
+  return (
+    <Box
+      mt={["20px", "30px", "60px"]}
+      h={["20vh", "20vh", "20vh", "80vh"]}
+      className="slider-container Section2"
+    >
+      <Slider {...settings}>
+        {sliderImages.map((sliderImage, i) => (
+          <Box className="slider-image" key={i} w={"100%"} p={1}>
+            <Image
+              src={sliderImage}
+              alt="sliderImage"
+              w={"100%"}
+              objectFit="cover"
+            />
+          </Box>
+        ))}
+      </Slider>
+    </Box>
+  );
+};
+
+export default Section1;

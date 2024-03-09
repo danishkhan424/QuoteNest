@@ -1,15 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Anta', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Anta", sans-serif;
 }
-.slider-container{
-    max-width: 97vw;
-    margin: auto;
+.slider-container {
+  max-width: 97vw;
+  margin: 0 auto;
 }
-.slider-image{
-    width: 100%;
-    
+.slider-image {
+  width: 100%;
 }
+.quoteCard {
+  justify-content: center;
+  display: flex;
+  color: #1a3676;
+  font-weight: bold;
+  flex-direction: column;
+  border: 1px solid #1a3676;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin: 10px;
+  height: 150px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.quoteCard:hover {
+  transform: scale(1.1);
+  border-width: 2px;
+}
+
+/* 
+
+justifyContent={"center"}
+          px={5}
+          flexDir={"column"}
+          key={quote.id}
+          border={"1px solid black"}
+          h={"150px"}
+
+*/

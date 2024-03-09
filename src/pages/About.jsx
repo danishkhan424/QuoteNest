@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
+import Loader from "../components/Loader";
 const About = () => {
+
   return (
     <Flex flexDir={"column"} px={["20px", "30px", "50px"]} py={5} gap={5}>
       <Text fontSize={["2xl", "3xl", "4xl"]}>Welcome to Our About Page!</Text>

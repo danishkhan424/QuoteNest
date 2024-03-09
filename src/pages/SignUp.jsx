@@ -1,6 +1,5 @@
-import React, { useContext, useReducer, useState } from "react";
+import React, { useReducer, useState } from "react";
 import {
-  Box,
   Button,
   Input,
   InputGroup,
@@ -8,91 +7,44 @@ import {
   InputLeftElement,
   Flex,
   FormControl,
-  FormLabel,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import { EmailIcon, LockIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../authProvider/AuthContextProvider";
 
 const initialState = {
-  email: "",
-  password: "",
+  userEmail: "",
+  userPassword: "",
 };
 function reducer(state, { type, payload }) {
   switch (type) {
     case "email": {
       return {
         ...state,
-        email: payload,
+        userEmail: payload,
       };
     }
     case "password": {
       return {
         ...state,
-        password: payload,
+        userPassword: payload,
       };
     }
   }
 }
 
-const Login = () => {
+const SignUp = () => {
   const [show, setShow] = useState(false);
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(AuthContext);
-  const toast = useToast();
-
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(toast);
-    const user = localStorage.getItem("user") || {};
-    if (user) {
-      const userData = JSON.parse(user);
-      if (
-        userData.userEmail === state.email &&
-        userData.userPassword === state.password
-      ) {
-        setIsLoggedIn(true);
-        // login sucessfull
-        toast({
-          title: "Login Successful",
-          description: "You have been successfully logged in.",
-          status: "success",
-          position: "top",
-          varient: "top-accent",
-          duration: 5000,
-          isClosable: true,
-        });
-        navigate("/generate");
-        localStorage.removeItem("user");
-      } else {
-        // login failed
-        toast({
-          title: "Login Failed",
-          description: "Invalid email or password. Please try again.",
-          status: "error",
-          position: "top",
-          varient: "top-accent",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-    } else {
-      // login failed
-      toast({
-        title: "Login Failed",
-        description: "Invalid email or password. Please try again.",
-        status: "error",
-        position: "top",
-        varient: "top-accent",
-        duration: 5000,
-        isClosable: true,
-      });
-    }
+    console.log("clicked");
+      localStorage.setItem("user", JSON.stringify(state));
+      navigate("/login")
   };
-  const { email, password } = state;
+
+  const { userEmail, userPassword } = state;
 
   return (
     <Flex h={"100vh"} w={"100vw"} justifyContent="center" alignItems="center">
@@ -105,12 +57,13 @@ const Login = () => {
               </InputLeftElement>
               <Input
                 type="email"
-                value={email}
                 onChange={(e) =>
                   dispatch({ type: "email", payload: e.target.value })
                 }
+                value={userEmail}
                 variant="flushed"
                 placeholder="Enter email"
+                isRequired
               />
             </InputGroup>
             <InputGroup>
@@ -118,14 +71,15 @@ const Login = () => {
                 <LockIcon fontSize={"20px"} color="blue.400" />
               </InputLeftElement>
               <Input
-                value={password}
-                variant="flushed"
+                value={userPassword}
                 onChange={(e) =>
                   dispatch({ type: "password", payload: e.target.value })
                 }
+                variant="flushed"
                 pr="4.5rem"
                 type={show ? "text" : "password"}
-                placeholder="Enter password"
+                placeholder="Create password"
+                isRequired
               />
               <InputRightElement width="4.5rem">
                 <Button
@@ -150,7 +104,7 @@ const Login = () => {
             _hover={{ bg: "blue.800", color: "blue.200" }}
             bg={"blue.100"}
           >
-            Login
+            Sign Up
           </Button>
         </FormControl>
       </form>
@@ -158,8 +112,4 @@ const Login = () => {
   );
 };
 
-export default Login;
-
-/*
-
-*/
+export default SignUp;

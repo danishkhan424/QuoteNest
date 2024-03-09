@@ -6,6 +6,7 @@ import Generate from '../pages/Generate'
 import About from '../pages/About'
 import PrivateRoute from './PrivateRoute'
 import { Route, Routes } from 'react-router-dom'
+import SignUp from '../pages/SignUp'
 
 const AllRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route
           path="/generate"
           element={

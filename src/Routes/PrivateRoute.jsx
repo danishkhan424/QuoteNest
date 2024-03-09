@@ -4,9 +4,9 @@ import { AuthContext } from '../authProvider/AuthContextProvider'
 import Generate from '../pages/Generate'
 
 const PrivateRoute = () => {
-    const { state: { isLoggedIn }} = useContext(AuthContext)
+    const { isLoggedIn } = useContext(AuthContext);
     return (
-        isLoggedIn ? <Generate /> : <Navigate to="/login" />
+        isLoggedIn ? <Generate /> : <Navigate to="/signup" />
   )
 }
 
