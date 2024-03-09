@@ -57,7 +57,7 @@ const Navbar = () => {
           fontSize={["sm", "md", "lg"]}
           colorScheme="blue.900"
           variant="outline"
-          px={["10", "10", "10"]}
+          px={["10", "10", null]}
           size={["xs", "md", "lg"]}
           _hover={{ bg: "blue.900", color: "blue.100" }}
         >

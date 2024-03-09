@@ -1,7 +1,11 @@
-import React from 'react'
-import { Box } from "@chakra-ui/react";
+import React from "react";
+import FetchData from "../components/Generate/FetchData";
 const Generate = () => {
-  return <Box h={"200vh"}>Generate</Box>;
-}
+  return (
 
-export default Generate
+      <FetchData />
+
+  );
+};
+
+export default Generate;

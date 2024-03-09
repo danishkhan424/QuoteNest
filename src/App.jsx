@@ -8,8 +8,6 @@ import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 function App() {
-
-  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
