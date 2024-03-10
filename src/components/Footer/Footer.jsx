@@ -45,7 +45,7 @@ const Footer = () => {
         <FooterLinks />
         <SocialLinks />
         <Box fontSize={"sm"}>
-          &copy; 2024 Your Website Name. All rights reserved.
+          &copy; 2024 QuoteNest. All rights reserved.
         </Box>
       </Box>
     </Box>
