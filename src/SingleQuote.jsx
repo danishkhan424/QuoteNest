@@ -2,7 +2,7 @@ import { Flex, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Loader from "../components/Loader";
+import Loader from "./components/Loader";
 
 const initialState = {
   isLoading: false,
@@ -48,7 +48,7 @@ const SingleQuote = () => {
     fetchSingleQuote();
   }, [id]);
 
-  // 
+  //
   return isLoading ? (
     <Loader />
   ) : (

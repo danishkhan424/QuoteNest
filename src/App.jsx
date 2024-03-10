@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@chakra-ui/react";
 import "./App.css";
-import Navbar from "./Routes/Navbar";
+import Navbar from "./Navbar";
 import AllRoutes from "./Routes/AllRoutes";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
@@ -25,8 +25,10 @@ function App() {
       setIsLoading(false);
     }, 2000);
   }, []);
-  
-  return isLoading ? <Loader /> : (
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <Box>
       <Navbar />
       <AllRoutes />

@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SmallNavbar from "./SmallNavbar";
-import Loader from "../components/Loader";
+import Loader from "./components/Loader";
 import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,13 +18,11 @@ const Navbar = () => {
 
   const screenSize = useBreakpointValue({ base: "base", md: "md" });
 
-   const isActive = (path) => {
-     const location = useLocation();
-     return location.pathname === path;
-   };
+  const isActive = (path) => {
+    const location = useLocation();
+    return location.pathname === path;
+  };
 
-
-  
   return isLoading ? (
     <Loader />
   ) : screenSize === "base" ? (
@@ -49,7 +47,8 @@ const Navbar = () => {
         </Link>
       </Heading>
       <Box
-        display="flex"              className="navLinks"
+        display="flex"
+        className="navLinks"
         justifyContent="space-evenly"
         alignItems={"center"}
         px={["10px", "20px", "40px"]}
@@ -59,9 +58,18 @@ const Navbar = () => {
         fontSize={["sm", "md", "lg"]}
         letterSpacing={2}
       >
-        <Link className={isActive("/") ? "active" : ""}  href="/">Home</Link>
-        <Link className={isActive("/generate") ? "active" : ""}  href="/generate">Generate</Link>
-        <Link className={isActive("/about") ? "active" : ""}  href="/about">About</Link>
+        <Link className={isActive("/") ? "active" : ""} href="/">
+          Home
+        </Link>
+        <Link
+          className={isActive("/generate") ? "active" : ""}
+          href="/generate"
+        >
+          Generate
+        </Link>
+        <Link className={isActive("/about") ? "active" : ""} href="/about">
+          About
+        </Link>
         <Button
           fontSize={["sm", "md", "lg"]}
           colorScheme="blue.900"

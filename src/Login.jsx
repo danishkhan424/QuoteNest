@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { EmailIcon, LockIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../authProvider/AuthContextProvider";
+import { AuthContext } from "./authProvider/AuthContextProvider";
 
 const initialState = {
   email: "",
