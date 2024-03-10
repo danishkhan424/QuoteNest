@@ -1,5 +1,6 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import {
+  Box,
   Button,
   Input,
   InputGroup,
@@ -7,100 +8,144 @@ import {
   InputLeftElement,
   Flex,
   FormControl,
+  FormLabel,
   VStack,
   useToast,
 } from "@chakra-ui/react";
 import { EmailIcon, LockIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../authProvider/AuthContextProvider";
 
 const initialState = {
-  userEmail: "",
-  userPassword: "",
+  email: "",
+  password: "",
 };
 function reducer(state, { type, payload }) {
   switch (type) {
     case "email": {
       return {
         ...state,
-        userEmail: payload,
+        email: payload,
       };
     }
     case "password": {
       return {
         ...state,
-        userPassword: payload,
+        password: payload,
       };
     }
   }
 }
 
-const SignUp = () => {
+const Login = () => {
   const [show, setShow] = useState(false);
-  const toast = useToast();
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useContext(AuthContext);
+  const toast = useToast();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("clicked");
-    localStorage.setItem("user", JSON.stringify(state));
-    navigate("/login");
+    console.log(toast);
+    const user = localStorage.getItem("user") || {};
+    if (user) {
+      const userData = JSON.parse(user);
+      if (
+        userData.userEmail === state.email &&
+        userData.userPassword === state.password
+      ) {
+        setIsLoggedIn(true);
+        // login sucessfull
+        toast({
+          title: "Login Successful.",
+          description: "You have been successfully logged in.",
+          status: "success",
+          position: "top",
+          varient: "top-accent",
+          duration: 4000,
+          isClosable: true,
+        });
+        navigate("/generate");
+        localStorage.removeItem("user");
+      } else {
+        // login failed
+        toast({
+          title: "Login Failed",
+          description: "Invalid email or password. Please try again.",
+          status: "error",
+          position: "top",
+          varient: "top-accent",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } else {
+      // login failed
+      toast({
+        title: "Login Failed",
+        description: "Invalid email or password. Please try again.",
+        status: "error",
+        position: "top",
+        varient: "top-accent",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   useEffect(() => {
     toast({
-      title: "User Not Found.",
-      description: "Please Register first.",
+      title: "Account has been created.",
+      description: "Please Login.",
       position: "top",
-      status: "info",
+      status: "success",
       duration: 3000,
       isClosable: true,
     });
   }, []);
 
-  const { userEmail, userPassword } = state;
+  const { email, password } = state;
 
   return (
     <Flex h={"100vh"} w={"100vw"} justifyContent="center" alignItems="center">
       <form onSubmit={handleSubmit}>
-        <FormControl textAlign={"center"} minW={"380px"} maxW="30%" zIndex={3}>
+        <FormControl textAlign={"center"} minW={"300px"} maxW="30%" zIndex={3}>
           <VStack gap={10}>
-            <InputGroup size="md" colorScheme="cyan">
+            <InputGroup size="md" colorScheme="cyan" color="blue.800">
               <InputLeftElement pointerEvents="none">
-                <EmailIcon fontSize={"20px"} color="blue.800" />
+                <EmailIcon fontSize={"20px"} />
               </InputLeftElement>
               <Input
                 type="email"
                 isInvalid
                 focusBorderColor="blue.800"
                 errorBorderColor="blue.800"
+                value={email}
                 onChange={(e) =>
                   dispatch({ type: "email", payload: e.target.value })
                 }
-                value={userEmail}
                 variant="flushed"
                 _placeholder={{ color: "blue.800" }}
                 placeholder="Enter email"
-                isRequired
               />
             </InputGroup>
-            <InputGroup size="md" colorScheme="cyan">
+            <InputGroup color="blue.800" size="md">
               <InputLeftElement>
-                <LockIcon fontSize={"20px"} color="blue.800" />
+                <LockIcon fontSize={"20px"} />
               </InputLeftElement>
               <Input
-                _placeholder={{ color: "blue.800" }}
-                value={userPassword}
+                value={password}
+                variant="flushed"
                 isInvalid
                 focusBorderColor="blue.800"
                 errorBorderColor="blue.800"
                 onChange={(e) =>
                   dispatch({ type: "password", payload: e.target.value })
                 }
-                variant="flushed"
                 pr="4.5rem"
+                _placeholder={{ color: "blue.800" }}
                 type={show ? "text" : "password"}
-                placeholder="Create password"
-                isRequired
+                placeholder="Enter password"
               />
               <InputRightElement width="4.5rem">
                 <Button
@@ -125,12 +170,12 @@ const SignUp = () => {
             _hover={{ bg: "blue.800", color: "blue.200" }}
             bg={"blue.100"}
           >
-            Sign Up
+            Login
           </Button>
         </FormControl>
       </form>
 
-      {/* **************************************************************************** */}
+      {/* ************************************************************* */}
       <div class="blueFirst">
         <svg
           data-name="Layer 1"
@@ -187,4 +232,8 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
+
+/*
+
+*/

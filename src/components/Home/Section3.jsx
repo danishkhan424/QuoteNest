@@ -39,22 +39,25 @@ const quotes = [
 
 const Section3 = () => {
   return (
-    <SimpleGrid
-      mb={["20px", "40px", "100px"]}
-      px={10}
-      columns={[1, 2, 3]}
-      spacing={2}
-      className="section3"
-    >
-      {quotes.map((quote) => (
-        <Flex className="quoteCard">
-          <Text fontSize={["12px", "12px", "16px"]}>{quote.quote}</Text>
-          <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
-            {quote.author}
-          </Text>
-        </Flex>
-      ))}
-    </SimpleGrid>
+    <Box>
+      <SimpleGrid
+        mb={["20px"]}
+        px={10}
+        columns={[1, 2, 3]}
+        spacing={2}
+        className="section3"
+      >
+        {quotes.map((quote) => (
+          <Flex className="quoteCard">
+            <Text fontSize={["12px", "12px", "16px"]}>{quote.quote}</Text>
+            <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
+              {quote.author}
+            </Text>
+          </Flex>
+        ))}
+      </SimpleGrid>
+      
+    </Box>
   );
 };
 

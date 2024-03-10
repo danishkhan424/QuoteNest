@@ -106,42 +106,50 @@ const Grid = ({ quotes, isLoading }) => {
   return isLoading ? (
     <Loader />
   ) : (
-    <SimpleGrid
-      my={["30px"]}
-      columns={[1, 2, 2, 3]}
-      spacing={2}
-      className="section3"
-    >
-      {quotes.map((quote) => (
-        <Flex
-          className="generateQuoteCard"
-          minH={["150px", "150px", "200px"]}
-          key={quote._id}
-          flexDir={["column"]}
-        >
-          <Text fontSize={["12px", "12px", "16px"]}>{quote.content}</Text>
-          <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
-            {`~ ${quote.author}`}
-          </Text>
-          <Flex mt={8} justifyContent={"space-between"}>
-            <Button
-              h={["37px", "40px", "40px"]}
-              w={["37px", "40px", "40px"]}
-              bg={"blue.100"}
-              color={"blue.900"}
-              _hover={{ bg: "blue.900", color: "blue.100" }}
-                      className="copy"
-                      onClick={() => handleCopy(quote.content)}
-            >
-              <CopyIcon boxSize={[5, 5, 7]} />
-            </Button>
-            <Link fontSize={"0.7em"} textAlign={"right"} href={`/quotes/${quote._id}`}>
-              Show more <ArrowForwardIcon />
-            </Link>
+    <Box>
+      <SimpleGrid
+        my={["30px"]}
+        columns={[1, 2, 2, 3]}
+        spacing={2}
+        className="section3"
+        px={5}
+      >
+        {quotes.map((quote) => (
+          <Flex
+            className="generateQuoteCard"
+            minH={["150px", "150px", "200px"]}
+            key={quote._id}
+            flexDir={["column"]}
+          >
+            <Text fontSize={["12px", "12px", "16px"]}>{quote.content}</Text>
+            <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
+              {`~ ${quote.author}`}
+            </Text>
+            <Flex mt={8} justifyContent={"space-between"}>
+              <Button
+                h={["37px", "40px", "40px"]}
+                w={["37px", "40px", "40px"]}
+                bg={"blue.100"}
+                color={"blue.900"}
+                _hover={{ bg: "blue.900", color: "blue.100" }}
+                className="copy"
+                onClick={() => handleCopy(quote.content)}
+              >
+                <CopyIcon boxSize={[5, 5, 7]} />
+              </Button>
+              <Link
+                fontSize={"0.7em"}
+                textAlign={"right"}
+                href={`/quotes/${quote._id}`}
+              >
+                Show more <ArrowForwardIcon />
+              </Link>
+            </Flex>
           </Flex>
-        </Flex>
-      ))}
-    </SimpleGrid>
+        ))}
+      </SimpleGrid>
+      
+    </Box>
   );
 };
 

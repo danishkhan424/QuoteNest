@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SmallNavbar from "./SmallNavbar";
-import Loader from "./components/Loader";
+import Loader from "../components/Loader";
 import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -70,6 +70,7 @@ const Navbar = () => {
         <Link className={isActive("/about") ? "active" : ""} href="/about">
           About
         </Link>
+          <Link _hover={{ textDecoration: "none" }} href="/signup">
         <Button
           fontSize={["sm", "md", "lg"]}
           colorScheme="blue.900"
@@ -77,11 +78,10 @@ const Navbar = () => {
           px={["10", "10", null]}
           size={["xs", "md", "lg"]}
           _hover={{ bg: "blue.900", color: "blue.100" }}
-        >
-          <Link _hover={{ textDecoration: "none" }} href="/signup">
+          >
             Sign up
-          </Link>
         </Button>
+          </Link>
       </Box>
     </Box>
   );

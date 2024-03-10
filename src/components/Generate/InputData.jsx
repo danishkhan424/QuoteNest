@@ -15,18 +15,18 @@ const InputData = ({ onChange }) => {
   const [value, setValue] = useState(null);
   const [sortType, setSortType] = useState(null);
   const handleSubmit = (e) => {
-      e.preventDefault();
+    e.preventDefault();
     if (value && sortType) {
-        onChange({
-          type: "numberOfQuotes",
-          payload: parseInt(value),
-        });
-        onChange({ type: "sortType", payload: sortType });
+      onChange({
+        type: "numberOfQuotes",
+        payload: parseInt(value),
+      });
+      onChange({ type: "sortType", payload: sortType });
     }
   };
 
   return (
-    <Stack w={"40%"} m={"auto"}>
+    <Stack w={"40%"} m={"auto"} mb={10} px={5}>
       <form onSubmit={handleSubmit}>
         <InputGroup size={["sm", "md"]}>
           <InputLeftElement>
@@ -61,7 +61,7 @@ const InputData = ({ onChange }) => {
             <option value="desc">Long</option>
           </Select>
         </InputGroup>
-        <Box  m={"auto"} w={"50%"} textAlign={"center"}>
+        <Box m={"auto"} w={"50%"} textAlign={"center"}>
           <Button
             type="submit"
             w={"100%"}

@@ -1,19 +1,19 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import Home from "../Home";
-import Login from "../Login";
-import Generate from "../Generate";
-import About from "../About";
-import PrivateRoute from "../PrivateRoute";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Generate from "../pages/Generate";
+import About from "../pages/About";
+import PrivateRoute from "./PrivateRoute";
 import { Route, Routes } from "react-router-dom";
-import SignUp from "../SignUp";
-import SingleQuote from "../SingleQuote";
+import SignUp from "../pages/SignUp";
+import SingleQuote from "../pages/SingleQuote";
 
 const AllRoutes = () => {
   return (
     <Flex bg={"blue.50"}>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route

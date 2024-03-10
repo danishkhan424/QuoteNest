@@ -95,7 +95,7 @@ const Fatching = () => {
   }, [numberOfQuotes, sortType]);
 
   return (
-    <Box w={"100%"} mx={"auto"} my={["20px", "40px", "50px"]} px={5}>
+    <Box w={"100%"} mx={"auto"} mt={["20px", "40px", "50px"]} >
       <InputData onChange={dispatch} />
       {isLoading ? (
         <Loader />

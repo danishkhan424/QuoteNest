@@ -7,7 +7,7 @@
 }
 .navbar {
   z-index: 20;
-  border-bottom: 5px solid #1a3676;
+  border-bottom: 4px solid #1a3676;
 }
 .navLinks > a {
   color: #1a3676cb;
@@ -118,9 +118,8 @@
     height: 140vh;
     z-index: 1;
   }
-
 }
-.smallNavbar{
+.smallNavbar {
   border-bottom: 3px solid #1a3676;
 }
 
@@ -156,17 +155,17 @@
     position: absolute;
     top: 63px;
     left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-.blueSecond svg {
-  position: relative;
-  display: block;
-  width: calc(223% + 1.3px);
-  height: 110vh;
-  z-index: 1;
-}
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .blueSecond svg {
+    position: relative;
+    display: block;
+    width: calc(223% + 1.3px);
+    height: 110vh;
+    z-index: 1;
+  }
 }
 .blueFour {
   position: absolute;
@@ -213,9 +212,9 @@
 
 /* *****************************generate/SingleQuote page css***************************************** */
 
-
 .quoteFirst {
-  position: absolute;
+  border-top: 2px solid #bee3f8;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -226,8 +225,8 @@
 .quoteFirst svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 80vh;
+  width: calc(214% + 1.3px);
+  height: 40vh;
   z-index: 1;
   transform: rotateY(180deg);
 }
@@ -235,8 +234,43 @@
 .quoteFirst .shape-fill {
   fill: #1a3676;
 }
-
+@media (max-width: 767px) {
+  .quoteFirst {
+    border-top: 3px solid #bee3f8;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+}
 .quoteSecond {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  background-color: #ebf8ff;
+}
+
+.quoteSecond svg {
+  position: relative;
+  display: block;
+  width: calc(199% + 1.3px);
+  height: 30vh;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.quoteSecond .shape-fill {
+  fill: #bee3f8;
+}
+/* ****************************home section1 page */
+
+.homeSection1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -245,15 +279,49 @@
   line-height: 0;
 }
 
-.quoteSecond svg {
+.homeSection1 svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 126px;
+  width: calc(216% + 1.3px);
+  height: 25vh;
   transform: rotateY(180deg);
 }
 
-.quoteSecond .shape-fill {
+.homeSection1 .shape-fill {
   fill: #bee3f8;
 }
 
+.aboutWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+
+.aboutWave .shape-fill {
+  fill: #bee3f8;
+}
+@media (max-width: 767px) {
+  .homeSection1 {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .aboutWave {
+    top: 63px;
+    
+  }
+  .aboutWave svg {
+    position: relative;
+    display: block;
+    width: calc(239% + 1.3px);
+    height: 40px;
+    transform: rotateY(180deg);
+  }
+}

@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@chakra-ui/react";
 import "./App.css";
-import Navbar from "./Navbar";
+import Navbar from "./Routes/Navbar";
 import AllRoutes from "./Routes/AllRoutes";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
