@@ -15,7 +15,14 @@ const InputData = ({ onChange }) => {
   const [value, setValue] = useState(null);
   const [sortType, setSortType] = useState(null);
   const handleSubmit = (e) => {
-    e.preventDefault();
+      e.preventDefault();
+    if (value && sortType) {
+        onChange({
+          type: "numberOfQuotes",
+          payload: parseInt(value),
+        });
+        onChange({ type: "sortType", payload: sortType });
+    }
   };
 
   return (
@@ -54,13 +61,12 @@ const InputData = ({ onChange }) => {
             <option value="desc">Long</option>
           </Select>
         </InputGroup>
-        <Box border={"1px solid red"} m={"auto"} w={"50%"} textAlign={"center"}>
+        <Box  m={"auto"} w={"50%"} textAlign={"center"}>
           <Button
             type="submit"
             w={"100%"}
             mt={10}
-            border={"1px solid red"}
-            size={["md", "md", "lg"]}
+            size={["sm", "md", "lg"]}
             colorScheme="blue.900"
             variant="outline"
             _hover={{ bg: "blue.800", color: "blue.200" }}

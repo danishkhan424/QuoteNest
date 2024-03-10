@@ -59,7 +59,7 @@ function reducer(state, { type, payload }) {
   }
 }
 
-const fetchData = () => {
+const FetchData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const {
@@ -75,7 +75,7 @@ const fetchData = () => {
     dispatch({ type: "isLoading", payload: true });
     try {
       const res = await axios.get(
-        `https://api.quotable.io/quotes?sortBy=length&order=${sortType}&limit=${numberOfQuotes}&page=${currentPage}&maxLength=80`
+        `https://api.quotable.io/quotes?sortBy=length&order=${sortType}&limit=${numberOfQuotes}&page=${currentPage}&maxLength=120`
       );
       console.log("data: ", res.data);
       console.log("quotes: ", res.data.results);
@@ -95,11 +95,20 @@ const fetchData = () => {
   }, [numberOfQuotes, sortType]);
 
   return (
-    <Box w={"100%"} my={["20px", "40px", "50px"]} px={5}>
+    <Box w={"100%"} mx={"auto"} my={["20px", "40px", "50px"]} px={5}>
       <InputData onChange={dispatch} />
-      {isLoading ? <Loader /> : quotes.length > 1 && (<Grid quotes={quotes} isLoading={isLoading} />)}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        quotes.length > 1 && (
+          <>
+            <Grid quotes={quotes} isLoading={isLoading} />
+            
+          </>
+        )
+      )}
     </Box>
   );
 };
 
-export default fetchData;
+export default FetchData;

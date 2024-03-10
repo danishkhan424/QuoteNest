@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import {
   Button,
   Input,
@@ -8,6 +8,7 @@ import {
   Flex,
   FormControl,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import { EmailIcon, LockIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
@@ -35,6 +36,7 @@ function reducer(state, { type, payload }) {
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
+  const toast = useToast()
     const [state, dispatch] = useReducer(reducer, initialState);
     const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -43,6 +45,17 @@ const SignUp = () => {
       localStorage.setItem("user", JSON.stringify(state));
       navigate("/login")
   };
+
+  useEffect(() => {
+    toast({
+      title: "User Not Found.",
+      description: "Please Register first.",
+      position: "top",
+      status: "info",
+      duration: 3000,
+      isClosable: true,
+    })
+  },[])
 
   const { userEmail, userPassword } = state;
 

@@ -7,6 +7,16 @@ import AllRoutes from "./Routes/AllRoutes";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+
+const activeLink = window.location.pathname;
+const navLinks = document.querySelectorAll(".navLinks>a");
+
+navLinks.forEach((link) => {
+  if (link.getAttribute("href") === activeLink) {
+    link.classList.add("active");
+  }
+});
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,6 +30,7 @@ function App() {
     <Box>
       <Navbar />
       <AllRoutes />
+      {/* <SingleQuote /> */}
       <Footer />
     </Box>
   );

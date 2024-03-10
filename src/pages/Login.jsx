@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import {
   Box,
   Button,
@@ -57,12 +57,12 @@ const Login = () => {
         setIsLoggedIn(true);
         // login sucessfull
         toast({
-          title: "Login Successful",
+          title: "Login Successful.",
           description: "You have been successfully logged in.",
           status: "success",
           position: "top",
           varient: "top-accent",
-          duration: 5000,
+          duration: 4000,
           isClosable: true,
         });
         navigate("/generate");
@@ -92,6 +92,18 @@ const Login = () => {
       });
     }
   };
+
+  useEffect(() => {
+    toast({
+      title: "Account has been created.",
+      description: "Please Login.",
+      position: "top",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    })
+  },[])
+  
   const { email, password } = state;
 
   return (

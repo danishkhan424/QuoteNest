@@ -11,14 +11,22 @@ import {
   Link,
   Flex,
   Heading,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const SmallNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const isActive = (path) => {
+    const location = useLocation();
+    return location.pathname === path;
+  };
+
+  
   return (
-    <Box>
+    <Box className="navbar">
       <Flex
         justifyContent={"space-between"}
         px={"20px"}
@@ -32,9 +40,9 @@ const SmallNavbar = () => {
         h={"60px"}
       >
         <Heading size={["md", "lg", "xl"]}>
-          <Link _hover={{ textDecoration: "none" }} fontSize={"3xl"} href="#">
+          <Text fontSize={"3xl"}>
             QuoteNest
-          </Link>
+          </Text>
         </Heading>
         <HamburgerIcon cursor={"pointer"} w={8} h={8} onClick={onOpen} />
       </Flex>
@@ -49,6 +57,7 @@ const SmallNavbar = () => {
             <Flex
               direction="column"
               gap={10}
+              className="navLinks"
               alignItems={"center"}
               pt={20}
               letterSpacing={2}
@@ -58,12 +67,12 @@ const SmallNavbar = () => {
               fontWeight={"bold"}
               h={"100%"}
               w={"100%"}
-              fontSize={"2xl"}
+              fontSize={"xl"}
             >
-              <Link href="/">Home</Link>
-              <Link href="/generate">Generate</Link>
-              <Link href="/about">About</Link>
-              <Link href="/login">Login</Link>
+              <Link className={isActive("/") ? "active" : ""} href="/">Home</Link>
+              <Link className={isActive("/generate") ? "active" : ""} href="/generate">Generate</Link>
+              <Link className={isActive("/about") ? "active" : ""} href="/about">About</Link>
+              <Link className={isActive("/signup") ? "active" : ""} href="/signup">Sign Up</Link>
             </Flex>
           </DrawerBody>
         </DrawerContent>

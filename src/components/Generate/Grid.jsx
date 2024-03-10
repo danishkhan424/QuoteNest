@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text, Link, Button, useToast } from "@chakra-ui/react";
+
 import Loader from "../Loader";
+import { ArrowForwardIcon, CopyIcon } from "@chakra-ui/icons";
 
 /*
 const quotes = [
@@ -86,6 +88,21 @@ const quotes = [
 
 */
 const Grid = ({ quotes, isLoading }) => {
+    const toast = useToast();
+
+    function handleCopy(text) {
+      navigator.clipboard.writeText(text);
+      toast({
+          title: "Copied!",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position: "top-right",
+        });
+    }
+
+
+
   return isLoading ? (
     <Loader />
   ) : (
@@ -98,13 +115,30 @@ const Grid = ({ quotes, isLoading }) => {
       {quotes.map((quote) => (
         <Flex
           className="generateQuoteCard"
-          h={["150px", "150px", "200px"]}
+          minH={["150px", "150px", "200px"]}
           key={quote._id}
+          flexDir={["column"]}
         >
           <Text fontSize={["12px", "12px", "16px"]}>{quote.content}</Text>
           <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
             {`~ ${quote.author}`}
           </Text>
+          <Flex mt={8} justifyContent={"space-between"}>
+            <Button
+              h={["37px", "40px", "40px"]}
+              w={["37px", "40px", "40px"]}
+              bg={"blue.100"}
+              color={"blue.900"}
+              _hover={{ bg: "blue.900", color: "blue.100" }}
+                      className="copy"
+                      onClick={() => handleCopy(quote.content)}
+            >
+              <CopyIcon boxSize={[5, 5, 7]} />
+            </Button>
+            <Link fontSize={"0.7em"} textAlign={"right"} href={`/quotes/${quote._id}`}>
+              Show more <ArrowForwardIcon />
+            </Link>
+          </Flex>
         </Flex>
       ))}
     </SimpleGrid>
