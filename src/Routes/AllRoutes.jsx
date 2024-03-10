@@ -1,13 +1,13 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Generate from "../pages/Generate";
-import About from "../pages/About";
+import Home from "./Home";
+import Login from "./Login";
+import Generate from "./Generate";
+import About from "./About";
 import PrivateRoute from "./PrivateRoute";
 import { Route, Routes } from "react-router-dom";
-import SignUp from "../pages/SignUp";
-import SingleQuote from "../pages/SingleQuote";
+import SignUp from "./SignUp";
+import SingleQuote from "./SingleQuote";
 
 const AllRoutes = () => {
   return (
