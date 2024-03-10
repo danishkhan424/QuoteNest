@@ -1,14 +1,13 @@
 import React from "react";
 import SingleQuote from "./SingleQuote";
-import FetchData from "../components/Generate/Fetchdata";
+import Fatching from "../components/Generate/Fatching";
 
 const Generate = () => {
   return (
     <>
-      <FetchData />
+      <Fatching />
       {/* <SingleQuote /> */}
     </>
-
   );
 };
 

@@ -24,9 +24,8 @@ const SmallNavbar = () => {
     return location.pathname === path;
   };
 
-  
   return (
-    <Box className="navbar">
+    <Box className="smallNavbar">
       <Flex
         justifyContent={"space-between"}
         px={"20px"}
@@ -40,9 +39,7 @@ const SmallNavbar = () => {
         h={"60px"}
       >
         <Heading size={["md", "lg", "xl"]}>
-          <Text fontSize={"3xl"}>
-            QuoteNest
-          </Text>
+          <Text fontSize={"3xl"}>QuoteNest</Text>
         </Heading>
         <HamburgerIcon cursor={"pointer"} w={8} h={8} onClick={onOpen} />
       </Flex>
@@ -69,10 +66,27 @@ const SmallNavbar = () => {
               w={"100%"}
               fontSize={"xl"}
             >
-              <Link className={isActive("/") ? "active" : ""} href="/">Home</Link>
-              <Link className={isActive("/generate") ? "active" : ""} href="/generate">Generate</Link>
-              <Link className={isActive("/about") ? "active" : ""} href="/about">About</Link>
-              <Link className={isActive("/signup") ? "active" : ""} href="/signup">Sign Up</Link>
+              <Link className={isActive("/") ? "active" : ""} href="/">
+                Home
+              </Link>
+              <Link
+                className={isActive("/generate") ? "active" : ""}
+                href="/generate"
+              >
+                Generate
+              </Link>
+              <Link
+                className={isActive("/about") ? "active" : ""}
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                className={isActive("/signup") ? "active" : ""}
+                href="/signup"
+              >
+                Sign Up
+              </Link>
             </Flex>
           </DrawerBody>
         </DrawerContent>

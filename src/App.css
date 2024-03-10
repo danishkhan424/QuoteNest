@@ -5,6 +5,10 @@
   padding: 0;
   font-family: "Anta", sans-serif;
 }
+.navbar {
+  z-index: 20;
+  border-bottom: 5px solid #1a3676;
+}
 .navLinks > a {
   color: #1a3676cb;
   transition: transform 0.5s ease;
@@ -14,7 +18,7 @@
   text-decoration: none;
   transform: scale(1.2);
 }
-.navLinks > a.active{
+.navLinks > a.active {
   transform: scale(1.3);
   color: #1a3676;
   text-decoration: 2px underline;
@@ -70,3 +74,186 @@
   margin: auto;
   padding: 20px;
 }
+/* ************************************************* signUp/logIn page css**************************************** */
+.blueFirst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.blueFirst svg {
+  position: relative;
+  display: block;
+  width: calc(185% + 1.3px);
+  height: 150vh;
+  z-index: 1;
+}
+
+.blueFirst .shape-fill {
+  fill: #1a3676;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .blueFirst svg {
+    width: calc(221% + 1.3px);
+    height: 150vh;
+    z-index: 1;
+  }
+  .blueFirst {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .blueFirst svg {
+    position: relative;
+    display: block;
+    width: calc(220% + 1.3px);
+    height: 140vh;
+    z-index: 1;
+  }
+
+}
+.smallNavbar{
+  border-bottom: 3px solid #1a3676;
+}
+
+.blueSecond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.blueSecond svg {
+  position: relative;
+  display: block;
+  width: calc(223% + 1.3px);
+  height: 120vh;
+  z-index: 1;
+}
+
+.blueSecond .shape-fill {
+  fill: #bee3f8;
+}
+
+/** For mobile devices **/
+
+@media (max-width: 767px) {
+  .blueSecond svg {
+    width: calc(251% + 1.3px);
+    height: 500px;
+  }
+  .blueSecond {
+    position: absolute;
+    top: 63px;
+    left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.blueSecond svg {
+  position: relative;
+  display: block;
+  width: calc(223% + 1.3px);
+  height: 110vh;
+  z-index: 1;
+}
+}
+.blueFour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.blueFour svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 500px;
+}
+
+.blueFour .shape-fill {
+  fill: #1a3676;
+}
+
+/** For mobile devices **/
+
+@media (max-width: 767px) {
+  .blueFour svg {
+    position: relative;
+    width: calc(100% + 1.3px);
+    display: block;
+    height: 300px;
+  }
+  .blueFour {
+    position: absolute;
+    top: 63px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .blueFour .shape-fill {
+    fill: #bee3f8;
+  }
+}
+
+/* *****************************generate/SingleQuote page css***************************************** */
+
+
+.quoteFirst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.quoteFirst svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80vh;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.quoteFirst .shape-fill {
+  fill: #1a3676;
+}
+
+.quoteSecond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.quoteSecond svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 126px;
+  transform: rotateY(180deg);
+}
+
+.quoteSecond .shape-fill {
+  fill: #bee3f8;
+}
+

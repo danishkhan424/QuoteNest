@@ -59,7 +59,7 @@ function reducer(state, { type, payload }) {
   }
 }
 
-const FetchData = () => {
+const Fatching = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const {
@@ -111,4 +111,4 @@ const FetchData = () => {
   );
 };
 
-export default FetchData;
+export default Fatching;
