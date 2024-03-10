@@ -13,7 +13,7 @@ const AllRoutes = () => {
   return (
     <Flex bg={"blue.50"}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Generate/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route
