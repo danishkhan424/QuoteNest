@@ -5,13 +5,14 @@ import Grid from "./Grid";
 import InputData from "./InputData";
 import axios from "axios";
 import Loader from "../Loader";
+import Pagination from "./Pagination";
 
 const initialState = {
   quotes: [],
   sortType: "",
   isLoading: false,
   numberOfQuotes: 0,
-  totalPages: "",
+  totalPages: 5,
   currentPage: 1,
 };
 
@@ -82,7 +83,7 @@ const Fatching = () => {
       console.log("totalPages: ", res.data.totalPages);
       console.log("currentPage: ", res.data.page);
       dispatch({ type: "quotes", payload: res.data.results });
-      dispatch({ type: "totalPages", payload: res.data.totalPages });
+      // dispatch({ type: "totalPages", payload: res.data.totalPages });
       dispatch({ type: "currentPage", payload: res.data.page });
     } catch (error) {
     } finally {
@@ -92,10 +93,10 @@ const Fatching = () => {
 
   useEffect(() => {
     fetchQuotes();
-  }, [numberOfQuotes, sortType]);
+  }, [numberOfQuotes, sortType, currentPage]);
 
   return (
-    <Box w={"100%"} mx={"auto"} mt={["20px", "40px", "50px"]} >
+    <Box w={"100%"} mx={"auto"} mt={["20px", "40px", "50px"]}>
       <InputData onChange={dispatch} />
       {isLoading ? (
         <Loader />
@@ -103,7 +104,7 @@ const Fatching = () => {
         quotes.length > 1 && (
           <>
             <Grid quotes={quotes} isLoading={isLoading} />
-            
+            <Pagination total={totalPages} onChange={dispatch} current={currentPage} />
           </>
         )
       )}

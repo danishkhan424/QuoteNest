@@ -111,7 +111,11 @@ const Login = () => {
   return (
     <Flex h={"100vh"} w={"100vw"} justifyContent="center" alignItems="center">
       <form onSubmit={handleSubmit}>
-        <FormControl textAlign={"center"} minW={"300px"} maxW="30%" zIndex={3}>
+        <FormControl
+          textAlign={"center"}
+          minW={["100%", "50%", "50%"]}
+          zIndex={3}
+        >
           <VStack gap={10}>
             <InputGroup size="md" colorScheme="cyan" color="blue.800">
               <InputLeftElement pointerEvents="none">

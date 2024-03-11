@@ -37,7 +37,7 @@ function reducer(state, { type, payload }) {
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
-  const {isLoggedIn}=useContext(AuthContext)
+  const { isLoggedIn } = useContext(AuthContext);
   const toast = useToast();
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
@@ -65,7 +65,11 @@ const SignUp = () => {
   return (
     <Flex h={"100vh"} w={"100vw"} justifyContent="center" alignItems="center">
       <form onSubmit={handleSubmit}>
-        <FormControl textAlign={"center"} minW={"300px"} maxW="30%" zIndex={3}>
+        <FormControl
+          textAlign={"center"}
+          minW={["100%", "50%", "50%"]}
+          zIndex={3}
+        >
           <VStack gap={10}>
             <InputGroup size="md" colorScheme="cyan">
               <InputLeftElement pointerEvents="none">
