@@ -41,7 +41,7 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(AuthContext);
+  const {isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const toast = useToast();
 
   const handleSubmit = (e) => {
@@ -54,7 +54,8 @@ const Login = () => {
         userData.userEmail === state.email &&
         userData.userPassword === state.password
       ) {
-        setIsLoggedIn(true);
+        setIsLoggedIn((prev)=> true);
+        console.log("isLoggedIn/login: ", isLoggedIn);
         // login sucessfull
         toast({
           title: "Login Successful.",
@@ -66,7 +67,7 @@ const Login = () => {
           isClosable: true,
         });
         navigate("/generate");
-        localStorage.removeItem("user");
+        // localStorage.removeItem("user");
       } else {
         // login failed
         toast({
@@ -102,6 +103,7 @@ const Login = () => {
       duration: 3000,
       isClosable: true,
     });
+    console.log("isLoggedIn/ inloginUseEffect" ,isLoggedIn);
   }, []);
 
   const { email, password } = state;
@@ -176,7 +178,7 @@ const Login = () => {
       </form>
 
       {/* ************************************************************* */}
-      <div class="blueFirst">
+      <div className="blueFirst">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -185,11 +187,11 @@ const Login = () => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>
-      <div class="blueSecond">
+      <div className="blueSecond">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -198,11 +200,11 @@ const Login = () => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>
-      <div class="blueThird">
+      <div className="blueThird">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -211,11 +213,11 @@ const Login = () => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>
-      <div class="blueFour">
+      <div className="blueFour">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +226,7 @@ const Login = () => {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>

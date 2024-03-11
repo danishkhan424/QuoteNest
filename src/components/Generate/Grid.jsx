@@ -140,7 +140,7 @@ const Grid = ({ quotes, isLoading }) => {
               <Link
                 fontSize={"0.7em"}
                 textAlign={"right"}
-                href={`/quotes/${quote._id}`}
+                href={`/generate/${quote._id}`}
               >
                 Show more <ArrowForwardIcon />
               </Link>
@@ -148,7 +148,6 @@ const Grid = ({ quotes, isLoading }) => {
           </Flex>
         ))}
       </SimpleGrid>
-      
     </Box>
   );
 };

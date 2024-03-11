@@ -25,7 +25,7 @@ const SmallNavbar = () => {
   };
 
   return (
-    <Box className="smallNavbar">
+    <Box className="smallNavbar" position={"sticky"} top={0} zIndex={10}>
       <Flex
         justifyContent={"space-between"}
         px={"20px"}
@@ -33,7 +33,6 @@ const SmallNavbar = () => {
         alignItems={"center"}
         bg="blue.100"
         color={"blue.900"}
-        position={"sticky"}
         top={0}
         w={"100%"}
         h={"60px"}

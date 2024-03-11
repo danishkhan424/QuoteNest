@@ -26,11 +26,9 @@ const AllRoutes = () => {
         />
         <Route path="/about" element={<About />} />
         <Route
-          path="/quotes/:id"
+          path="/generate/:id"
           element={
-            <PrivateRoute>
               <SingleQuote />
-            </PrivateRoute>
           }
         />
       </Routes>
