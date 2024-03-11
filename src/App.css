@@ -98,29 +98,6 @@
   fill: #1a3676;
 }
 
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .blueFirst svg {
-    width: calc(221% + 1.3px);
-    height: 150vh;
-    z-index: 1;
-  }
-  .blueFirst {
-    position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-  .blueFirst svg {
-    position: relative;
-    display: block;
-    width: calc(220% + 1.3px);
-    height: 140vh;
-    z-index: 1;
-  }
-}
 .smallNavbar {
   border-bottom: 3px solid #1a3676;
 }
@@ -146,29 +123,6 @@
   fill: #bee3f8;
 }
 
-/** For mobile devices **/
-
-@media (max-width: 767px) {
-  .blueSecond svg {
-    width: calc(251% + 1.3px);
-    height: 500px;
-  }
-  .blueSecond {
-    position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-  .blueSecond svg {
-    position: relative;
-    display: block;
-    width: calc(223% + 1.3px);
-    height: 110vh;
-    z-index: 1;
-  }
-}
 .blueFour {
   position: absolute;
   top: 0;
@@ -189,28 +143,6 @@
   fill: #1a3676;
 }
 
-/** For mobile devices **/
-
-@media (max-width: 767px) {
-  .blueFour svg {
-    position: relative;
-    width: calc(100% + 1.3px);
-    display: block;
-    height: 300px;
-  }
-  .blueFour {
-    position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .blueFour .shape-fill {
-    fill: #bee3f8;
-  }
-}
 
 /* *****************************generate/SingleQuote page css***************************************** */
 
@@ -236,17 +168,7 @@
 .quoteFirst .shape-fill {
   fill: #1a3676;
 }
-@media (max-width: 767px) {
-  .quoteFirst {
-    border-top: 3px solid #bee3f8;
-    position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-}
+
 .quoteSecond {
   position: relative;
   bottom: 0;
@@ -305,26 +227,6 @@
 .aboutWave .shape-fill {
   fill: #bee3f8;
 }
-@media (max-width: 767px) {
-  .homeSection1 {
-    position: absolute;
-    top: 63px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-  .aboutWave {
-    top: 63px;
-  }
-  .aboutWave svg {
-    position: relative;
-    display: block;
-    width: calc(239% + 1.3px);
-    height: 40px;
-    transform: rotateY(180deg);
-  }
-}
 
 /* ********************** Pagination ************************** */
 .changePage {
@@ -361,3 +263,93 @@
     transform: rotate(1turn);
   }
 }
+
+
+/* ********************** For Mobile Devices ****************************** */
+
+  @media (max-width: 767px) {
+    .homeSection1 {
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .aboutWave {
+      top: 63px;
+    }
+    .aboutWave svg {
+      position: relative;
+      display: block;
+      width: calc(239% + 1.3px);
+      height: 40px;
+      transform: rotateY(180deg);
+    }
+    .quoteFirst {
+      border-top: 3px solid #bee3f8;
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .blueFour svg {
+      position: relative;
+      width: calc(100% + 1.3px);
+      display: block;
+      height: 300px;
+    }
+    .blueFour {
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+  
+    .blueFour .shape-fill {
+      fill: #bee3f8;
+    }
+    .blueSecond svg {
+      width: calc(251% + 1.3px);
+      height: 500px;
+    }
+    .blueSecond {
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .blueSecond svg {
+      position: relative;
+      display: block;
+      width: calc(223% + 1.3px);
+      height: 110vh;
+      z-index: 1;
+    }
+    .blueFirst svg {
+      width: calc(221% + 1.3px);
+      height: 150vh;
+      z-index: 1;
+    }
+    .blueFirst {
+      position: absolute;
+      top: 63px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .blueFirst svg {
+      position: relative;
+      display: block;
+      width: calc(220% + 1.3px);
+      height: 140vh;
+      z-index: 1;
+    }
+  }
