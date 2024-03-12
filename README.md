@@ -123,10 +123,12 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 <br>
 <br>
 
-#### Small & Medium Screen Home Page
-<img src="./src/assets/QuoteNest/home(iPhone XR).png" alt="Small Screen Home Page" width="600">
+#### Small Screen Home Page
+<img src="./src/assets/QuoteNest/home(iPhone XR).png" alt="Small Screen Home Page" width="400">
 
-<img src="./src/assets/QuoteNest/home(Surface Duo).png" alt="Medium Screen Home Page" width="1000">
+
+#### Medium Screen Home Page
+<img src="./src/assets/QuoteNest/home(Surface Duo).png" alt="Medium Screen Home Page" width="600">
 
 <br>
 <br>
