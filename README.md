@@ -138,4 +138,5 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 <br>
 <br>
 <br>
+
 **Note:** &nbsp; Please refer to the screenshots provided for a visual representation of the project's interface and functionality.
