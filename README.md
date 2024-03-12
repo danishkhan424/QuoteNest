@@ -110,6 +110,7 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 
 ## Screenshots
 
+
 ### Gif
 
 ![QuoteNest Gif](./src/assets/QuoteNest/QuoteNestGif.gif)
