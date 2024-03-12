@@ -41,7 +41,7 @@ const SmallNavbar = () => {
         </Heading>
         <HamburgerIcon cursor={"pointer"} w={8} h={8} onClick={onOpen} />
       </Flex>
-      <Drawer isOpen={isOpen} size={"full"} onClose={onClose}>
+      <Drawer isOpen={isOpen} size={["xs", "md", "lg"]} onClose={onClose}>
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader fontWeight={"bold"} fontSize={"3xl"} color={"blue.900"}>
@@ -64,20 +64,30 @@ const SmallNavbar = () => {
               w={"100%"}
               fontSize={"xl"}
             >
-              <Link className={isActive("/") ? "active" : ""} to="/">
+              <Link
+                className={isActive("/") ? "active" : ""}
+                onClick={onClose}
+                to="/"
+              >
                 Home
               </Link>
               <Link
+                onClick={onClose}
                 className={isActive("/generate") ? "active" : ""}
                 to="/generate"
               >
                 Generate
               </Link>
-              <Link className={isActive("/about") ? "active" : ""} to="/about">
+              <Link
+                onClick={onClose}
+                className={isActive("/about") ? "active" : ""}
+                to="/about"
+              >
                 About
               </Link>
               <Link
                 className={isActive("/signup") ? "active" : ""}
+                onClick={onClose}
                 to="/signup"
               >
                 Sign Up
