@@ -112,23 +112,21 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 
 
 #### Default Screen
-<img src="./src/assets/QuoteNest/signUp(Nest Hub Max).png" alt="Default Screen signUp Page" height="400">
-<img src="./src/assets/QuoteNest/logIn(Nest Hub Max).png" alt="Default Screen login Page" height="400">
-<img src="./src/assets/QuoteNest/singleCard(Nest Hub Max).png" alt="Default Screen singleCard Page" height="400">
-<img src="./src/assets/QuoteNest/generate(Nest Hub Max).png" alt="Default Screen Generate Page" height="400">
-<br>
-<img src="./src/assets/QuoteNest/gridGenerate(Nest Hub Max).png" alt="Default Screen afterGridGenerate Page" height="400">
-<br>
-<img src="./src/assets/QuoteNest/home(Nest%20Hub%20Max).png" alt="Default Screen Home Page" height="400">
-<img src="./src/assets/QuoteNest/about(Nest Hub Max).png" alt="Default Screen About Page" height="400">
+<img src="./src/assets/QuoteNest/home(Nest%20Hub%20Max).png" alt="Default Screen Home Page">
+<img src="./src/assets/QuoteNest/about(Nest Hub Max).png" alt="Default Screen About Page">
+<img src="./src/assets/QuoteNest/signUp(Nest Hub Max).png" alt="Default Screen signUp Page">
+<img src="./src/assets/QuoteNest/logIn(Nest Hub Max).png" alt="Default Screen login Page">
+<img src="./src/assets/QuoteNest/generate(Nest Hub Max).png" alt="Default Screen Generate Page">
+<img src="./src/assets/QuoteNest/gridGenerate(Nest Hub Max).png" alt="Default Screen afterGridGenerate Page">
+<img src="./src/assets/QuoteNest/singleCard(Nest Hub Max).png" alt="Default Screen singleCard Page">
 <br>
 <br>
 <br>
 
 #### Small & Medium Screen Home Page
-<img src="./src/assets/QuoteNest/home(iPhone XR).png" alt="Small Screen Home Page" height="400">
+<img src="./src/assets/QuoteNest/home(iPhone XR).png" alt="Small Screen Home Page" width="600">
 
-<img src="./src/assets/QuoteNest/home(Surface Duo).png" alt="Medium Screen Home Page" height="400">
+<img src="./src/assets/QuoteNest/home(Surface Duo).png" alt="Medium Screen Home Page" width="1000">
 
 <br>
 <br>
