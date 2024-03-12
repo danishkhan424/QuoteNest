@@ -54,8 +54,7 @@ const Login = () => {
         userData.userEmail === state.email &&
         userData.userPassword === state.password
       ) {
-        setIsLoggedIn((prev)=> true);
-        console.log("isLoggedIn/login: ", isLoggedIn);
+        setIsLoggedIn(true);
         // login sucessfull
         toast({
           title: "Login Successful.",
@@ -67,7 +66,7 @@ const Login = () => {
           isClosable: true,
         });
         navigate("/generate");
-        // localStorage.removeItem("user");
+        localStorage.removeItem("user");
       } else {
         // login failed
         toast({
@@ -103,7 +102,6 @@ const Login = () => {
       duration: 3000,
       isClosable: true,
     });
-    console.log("isLoggedIn/ inloginUseEffect" ,isLoggedIn);
   }, []);
 
   const { email, password } = state;

@@ -8,13 +8,12 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Link,
   Flex,
   Heading,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const SmallNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,24 +64,21 @@ const SmallNavbar = () => {
               w={"100%"}
               fontSize={"xl"}
             >
-              <Link className={isActive("/") ? "active" : ""} href="/">
+              <Link className={isActive("/") ? "active" : ""} to="/">
                 Home
               </Link>
               <Link
                 className={isActive("/generate") ? "active" : ""}
-                href="/generate"
+                to="/generate"
               >
                 Generate
               </Link>
-              <Link
-                className={isActive("/about") ? "active" : ""}
-                href="/about"
-              >
+              <Link className={isActive("/about") ? "active" : ""} to="/about">
                 About
               </Link>
               <Link
                 className={isActive("/signup") ? "active" : ""}
-                href="/signup"
+                to="/signup"
               >
                 Sign Up
               </Link>

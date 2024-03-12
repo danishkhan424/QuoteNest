@@ -47,8 +47,8 @@ const Section3 = () => {
         spacing={2}
         className="section3"
       >
-        {quotes.map((quote) => (
-          <Flex className="quoteCard">
+        {quotes.map((quote, i) => (
+          <Flex className="quoteCard" key={i}>
             <Text fontSize={["12px", "12px", "16px"]}>{quote.quote}</Text>
             <Text color={"gray.500"} pt={3} fontSize={["8px", "10px", "12px"]}>
               {quote.author}
@@ -56,7 +56,6 @@ const Section3 = () => {
           </Flex>
         ))}
       </SimpleGrid>
-      
     </Box>
   );
 };

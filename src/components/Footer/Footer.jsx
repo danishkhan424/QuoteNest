@@ -1,8 +1,9 @@
-import { Box, Heading, Image, Link } from "@chakra-ui/react";
+import { Box, Heading, Image } from "@chakra-ui/react";
 import React from "react";
 import FooterLinks from "./FooterLinks";
 import SocialLinks from "./SocialLinks";
 import heartIcon from "../../assets/heart.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -39,7 +40,7 @@ const Footer = () => {
         margin="auto"
       >
         <Heading size={["md", "lg", "xl"]} mb={10}>
-          <Link _hover={{ textDecoration: "none" }} href="#">
+          <Link _hover={{ textDecoration: "none" }} to="#">
             QuoteNest
           </Link>
         </Heading>

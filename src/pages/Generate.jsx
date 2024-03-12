@@ -4,11 +4,7 @@ import Fatching from "../components/Generate/Fatching";
 const Generate = () => {
   return (
     <>
-      
       <Fatching />
-
-      {/* <SingleQuote /> */}
-
     </>
   );
 };

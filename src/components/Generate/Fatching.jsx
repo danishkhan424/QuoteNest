@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 
 import Grid from "./Grid";
 import InputData from "./InputData";
@@ -86,6 +86,7 @@ const Fatching = () => {
       // dispatch({ type: "totalPages", payload: res.data.totalPages });
       dispatch({ type: "currentPage", payload: res.data.page });
     } catch (error) {
+      throw new Error("error", error);
     } finally {
       dispatch({ type: "isLoading", payload: false });
     }

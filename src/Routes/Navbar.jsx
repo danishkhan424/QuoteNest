@@ -1,14 +1,13 @@
 import {
   Box,
   Heading,
-  Link,
   Button,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import SmallNavbar from "./SmallNavbar";
 import Loader from "../components/Loader";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 const Navbar = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -42,7 +41,7 @@ const Navbar = () => {
       zIndex={10}
     >
       <Heading size={["md", "lg", "xl"]}>
-        <Link _hover={{ textDecoration: "none" }} href="#">
+        <Link _hover={{ textDecoration: "none" }} to="#">
           QuoteNest
         </Link>
       </Heading>
@@ -58,30 +57,30 @@ const Navbar = () => {
         fontSize={["sm", "md", "lg"]}
         letterSpacing={2}
       >
-        <Link className={isActive("/") ? "active" : ""} href="/">
+        <Link className={isActive("/") ? "active" : ""} to="/">
           Home
         </Link>
         <Link
           className={isActive("/generate") ? "active" : ""}
-          href="/generate"
+          to="/generate"
         >
           Generate
         </Link>
-        <Link className={isActive("/about") ? "active" : ""} href="/about">
+        <Link className={isActive("/about") ? "active" : ""} to="/about">
           About
         </Link>
-          <Link _hover={{ textDecoration: "none" }} href="/signup">
-        <Button
-          fontSize={["sm", "md", "lg"]}
-          colorScheme="blue.900"
-          variant="outline"
-          px={["10", "10", null]}
-          size={["xs", "md", "lg"]}
-          _hover={{ bg: "blue.900", color: "blue.100" }}
+        <Link _hover={{ textDecoration: "none" }} to="/signup">
+          <Button
+            fontSize={["sm", "md", "lg"]}
+            colorScheme="blue.900"
+            variant="outline"
+            px={["10", "10", null]}
+            size={["xs", "md", "lg"]}
+            _hover={{ bg: "blue.900", color: "blue.100" }}
           >
             Sign up
-        </Button>
-          </Link>
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

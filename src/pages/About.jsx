@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import Loader from "../components/Loader";
 const About = () => {
   return (
     <Box>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Flex, Link, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const FooterLinks = () => {
   return (
@@ -14,39 +15,39 @@ const FooterLinks = () => {
         <Text fontSize={["lg", "xl", "xl"]} fontWeight="bold">
           Navigation
         </Text>
-        <Link href="">About Us</Link>
-        <Link href="">Terms & Conditions</Link>
-        <Link href="">Privacy Policy</Link>
-        <Link href="">FAQ</Link> <Link href="">Contact</Link>
+        <Link to="">About Us</Link>
+        <Link to="">Terms & Conditions</Link>
+        <Link to="">Privacy Policy</Link>
+        <Link to="">FAQ</Link> <Link to="">Contact</Link>
       </Flex>
       <Flex flexDirection="column" gap={5}>
         <Text fontSize={["lg", "xl", "xl"]} fontWeight="bold">
           Explore
         </Text>
-        <Link href="">Blog</Link>
-        <Link href="">Services</Link>
-        <Link href="">Portfolio</Link>
-        <Link href="">Testimonials</Link>
-        <Link href="">Careers</Link>
+        <Link to="">Blog</Link>
+        <Link to="">Services</Link>
+        <Link to="">Portfolio</Link>
+        <Link to="">Testimonials</Link>
+        <Link to="">Careers</Link>
       </Flex>
       <Flex flexDirection="column" gap={5}>
         <Text fontSize={["lg", "xl", "xl"]} fontWeight="bold">
           Media
         </Text>
-        <Link href="">Press</Link> <Link href="">Events</Link>
-        <Link href="">Partners</Link>
-        <Link href="">Donate</Link>
-        <Link href="">Volunteer</Link>
+        <Link to="">Press</Link> <Link to="">Events</Link>
+        <Link to="">Partners</Link>
+        <Link to="">Donate</Link>
+        <Link to="">Volunteer</Link>
       </Flex>
       <Flex flexDirection="column" gap={5}>
         <Text fontSize={["lg", "xl", "xl"]} fontWeight="bold">
           Community
         </Text>
-        <Link href="">Subscribe</Link>
-        <Link href="">Support</Link>
-        <Link href="">Feedback</Link>
-        <Link href="">Community</Link>
-        <Link href="">Resources</Link>
+        <Link to="">Subscribe</Link>
+        <Link to="">Support</Link>
+        <Link to="">Feedback</Link>
+        <Link to="">Community</Link>
+        <Link to="">Resources</Link>
       </Flex>
     </SimpleGrid>
   );

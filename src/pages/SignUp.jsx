@@ -43,7 +43,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("clicked");
     localStorage.setItem("user", JSON.stringify(state));
     navigate("/login");
   };
@@ -57,7 +56,6 @@ const SignUp = () => {
       duration: 3000,
       isClosable: true,
     });
-    console.log(isLoggedIn);
   }, []);
 
   const { userEmail, userPassword } = state;

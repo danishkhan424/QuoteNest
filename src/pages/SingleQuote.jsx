@@ -35,10 +35,9 @@ const SingleQuote = () => {
     dispatch({ type: "isLoading", payload: true });
     try {
       const res = await axios.get(`https://api.quotable.io/quotes/${id}`);
-      console.log("data: ", res.data);
-      console.log("quotes: ", res.data.content);
       dispatch({ type: "quote", payload: res.data });
     } catch (error) {
+      throw new Error ("error", error);
     } finally {
       dispatch({ type: "isLoading", payload: false });
     }

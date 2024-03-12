@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Flex, SimpleGrid, Text, Link, Button, useToast } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text, Button, useToast } from "@chakra-ui/react";
 
 import Loader from "../Loader";
 import { ArrowForwardIcon, CopyIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 /*
 const quotes = [
@@ -140,9 +141,10 @@ const Grid = ({ quotes, isLoading }) => {
               <Link
                 fontSize={"0.7em"}
                 textAlign={"right"}
-                href={`/generate/${quote._id}`}
               >
+                <Link to={`/generate/${quote._id}`} >
                 Show more <ArrowForwardIcon />
+                </Link>
               </Link>
             </Flex>
           </Flex>
