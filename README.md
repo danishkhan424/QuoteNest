@@ -110,8 +110,12 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 
 ## Screenshots
 
+### Gif
 
-#### Default Screen
+![QuoteNest Gif](./src/assets/QuoteNest/QuoteNestGif.gif)
+### Default Screen
+
+
 <img src="./src/assets/QuoteNest/home(Nest%20Hub%20Max).png" alt="Default Screen Home Page">
 <img src="./src/assets/QuoteNest/about(Nest Hub Max).png" alt="Default Screen About Page">
 <img src="./src/assets/QuoteNest/signUp(Nest Hub Max).png" alt="Default Screen signUp Page">
@@ -123,11 +127,11 @@ To fetch the data, the following API was utilized: [Quotable](https://api.quotab
 <br>
 <br>
 
-#### Small Screen Home Page
+### Small Screen Home Page
 <img src="./src/assets/QuoteNest/home(iPhone XR).png" alt="Small Screen Home Page" width="400">
 
 
-#### Medium Screen Home Page
+### Medium Screen Home Page
 <img src="./src/assets/QuoteNest/home(Surface Duo).png" alt="Medium Screen Home Page" width="600">
 
 <br>
